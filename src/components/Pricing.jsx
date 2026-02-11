@@ -47,8 +47,8 @@ const Pricing = () => {
                         <div
                             key={index}
                             className={`p-8 rounded-3xl border transition-all duration-300 relative group ${plan.highlight
-                                    ? 'bg-gradient-to-br from-indigo-600 to-purple-700 text-white border-transparent shadow-xl scale-105 z-10'
-                                    : 'bg-white border-light-border hover:border-accent-indigo/30 hover:shadow-lg hover:-translate-y-2'
+                                ? 'bg-gradient-to-br from-indigo-600 to-purple-700 text-white border-transparent shadow-xl scale-105 z-10'
+                                : 'bg-white border-light-border hover:border-accent-indigo/30 hover:shadow-lg hover:-translate-y-2'
                                 }`}
                         >
                             <h3 className={`text-lg font-bold font-display mb-2 ${plan.highlight ? 'text-indigo-100' : 'text-text-primary'}`}>{plan.title}</h3>
@@ -67,8 +67,8 @@ const Pricing = () => {
                             </ul>
 
                             <button className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${plan.highlight
-                                    ? 'bg-white text-indigo-600 hover:bg-indigo-50 shadow-lg'
-                                    : 'bg-light-bg text-text-primary border border-light-border hover:bg-accent-indigo hover:text-white hover:border-transparent'
+                                ? 'bg-white text-indigo-600 hover:bg-indigo-50 shadow-lg'
+                                : 'bg-light-bg text-text-primary border border-light-border hover:bg-accent-indigo hover:text-white hover:border-transparent'
                                 }`}>
                                 Register Now
                             </button>
