@@ -37,6 +37,61 @@ const Icons = {
             <circle cx="12" cy="10" r="3"></circle>
             <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path>
         </svg>
+    ),
+    FileText: () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+    ),
+    Search: () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    ),
+    Award: () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+        </svg>
+    ),
+    Shield: () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+    ),
+    Download: () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+    ),
+    CheckCircle: () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+    ),
+    Users: () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+    ),
+    UserPlus: () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="8.5" cy="7" r="4"></circle>
+            <line x1="20" y1="8" x2="20" y2="14"></line>
+            <line x1="23" y1="11" x2="17" y2="11"></line>
+        </svg>
     )
 }
 
@@ -134,376 +189,454 @@ const SubmitPaper = () => {
         </h3>
     )
 
+    const sidebarLinks = [
+        { text: 'Published Issue Details', icon: Icons.FileText },
+        { text: 'For Authors', icon: Icons.User },
+        { text: 'Track Paper', icon: Icons.Search },
+        { text: 'UGC CARE Approved', icon: Icons.Award },
+        { text: 'Approval/Licenses', icon: Icons.Shield },
+        { text: 'Download', icon: Icons.Download },
+        { text: 'All Policy', icon: Icons.CheckCircle },
+        { text: 'Conference', icon: Icons.Users },
+        { text: 'Reviewer /Referral (RMS)', icon: Icons.Briefcase },
+        { text: 'Editorial Board Member', icon: Icons.UserPlus }
+    ]
+
     return (
         <div className="pt-24 pb-20 min-h-screen bg-gray-50">
-            <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
-                {/* Important Instructions */}
-                <div className="mb-10">
-                    <h2 className="text-xl font-medium text-red-600 mb-4">Important Instructions</h2>
-                    <div className="bg-gray-100 border-l-4 border-gray-600 p-4 text-sm text-gray-700 leading-relaxed">
-                        Fill all required details carefully - the certificate will be generated from this information.
-                        If you face any issue submitting online, email your paper to editor@ijnrd.org with your
-                        paper title, author name(s), contact number, and email ID.
-                    </div>
-                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-                <form onSubmit={handleSubmit} className="bg-white p-6 md:p-10 rounded-lg shadow-sm border border-gray-200">
+                    {/* Left Column: Form */}
+                    <div className="lg:col-span-2">
+                        {/* Important Instructions */}
+                        <div className="mb-10">
+                            <h2 className="text-xl font-medium text-red-600 mb-4">Important Instructions</h2>
+                            <div className="bg-gray-100 border-l-4 border-gray-600 p-4 text-sm text-gray-700 leading-relaxed">
+                                Fill all required details carefully - the certificate will be generated from this information.
+                                If you face any issue submitting online, email your paper to editor@ijnrd.org with your
+                                paper title, author name(s), contact number, and email ID.
+                            </div>
+                        </div>
 
-                    {/* Paper Details */}
-                    <SectionTitle title="Paper Details" />
+                        <form onSubmit={handleSubmit} className="bg-white p-6 md:p-10 rounded-lg shadow-sm border border-gray-200">
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-start mb-6">
-                        <div className="md:col-span-1">
-                            <Label required>Paper Title</Label>
-                        </div>
-                        <div className="md:col-span-3">
-                            <input
-                                type="text"
-                                name="paperTitle"
-                                value={formData.paperTitle}
-                                onChange={handleChange}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm placeholder-gray-400"
-                                placeholder="Full Title of Your Paper."
-                            />
-                        </div>
-                    </div>
+                            {/* Paper Details */}
+                            <SectionTitle title="Paper Details" />
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-start mb-6">
-                        <div className="md:col-span-1">
-                            <Label required>Abstract</Label>
-                        </div>
-                        <div className="md:col-span-3">
-                            <textarea
-                                name="abstract"
-                                rows={4}
-                                value={formData.abstract}
-                                onChange={handleChange}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm placeholder-gray-400"
-                                placeholder="Copy your complete Abstract Here."
-                            />
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center mb-6">
-                        <div className="md:col-span-1">
-                            <Label>Keywords</Label>
-                        </div>
-                        <div className="md:col-span-3">
-                            <input
-                                type="text"
-                                name="keywords"
-                                value={formData.keywords}
-                                onChange={handleChange}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm placeholder-gray-400"
-                                placeholder="Keywords of your paper"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center mb-6">
-                        <div className="md:col-span-1">
-                            <Label required>Upload Paper</Label>
-                        </div>
-                        <div className="md:col-span-3">
-                            <div className="flex items-center">
-                                <label className="cursor-pointer bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-l border border-gray-300 border-r-0">
-                                    Choose file
-                                    <input type="file" className="hidden" name="file" onChange={handleChange} accept=".doc,.docx" />
-                                </label>
-                                <div className="flex-1 py-2 px-3 border border-gray-300 rounded-r bg-white text-gray-500 text-sm truncate">
-                                    {formData.file ? formData.file.name : 'No file chosen'}
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-start mb-6">
+                                <div className="md:col-span-1">
+                                    <Label required>Paper Title</Label>
+                                </div>
+                                <div className="md:col-span-3">
+                                    <input
+                                        type="text"
+                                        name="paperTitle"
+                                        value={formData.paperTitle}
+                                        onChange={handleChange}
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm placeholder-gray-400"
+                                        placeholder="Full Title of Your Paper."
+                                    />
                                 </div>
                             </div>
-                            <p className="mt-1 text-xs text-gray-500">File type: <span className="font-bold text-gray-700">.doc</span> or <span className="font-bold text-gray-700">.docx</span> only.</p>
-                        </div>
-                    </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center mb-6">
-                        <div className="md:col-span-1">
-                            <Label required>Research Type</Label>
-                        </div>
-                        <div className="md:col-span-3">
-                            <select
-                                name="researchType"
-                                value={formData.researchType}
-                                onChange={handleChange}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm bg-white"
-                            >
-                                <option>Research Paper</option>
-                                <option>Review Paper</option>
-                                <option>Case Study</option>
-                                <option>Survey Paper</option>
-                            </select>
-                        </div>
-                    </div>
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-start mb-6">
+                                <div className="md:col-span-1">
+                                    <Label required>Abstract</Label>
+                                </div>
+                                <div className="md:col-span-3">
+                                    <textarea
+                                        name="abstract"
+                                        rows={4}
+                                        value={formData.abstract}
+                                        onChange={handleChange}
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm placeholder-gray-400"
+                                        placeholder="Copy your complete Abstract Here."
+                                    />
+                                </div>
+                            </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center mb-6">
-                        <div className="md:col-span-1">
-                            <Label required>Research Area</Label>
-                        </div>
-                        <div className="md:col-span-3">
-                            <select
-                                name="researchArea"
-                                value={formData.researchArea}
-                                onChange={handleChange}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm bg-white"
-                            >
-                                <option value="">(Please Select Research area)</option>
-                                <option value="Computer Science">Computer Science</option>
-                                <option value="Engineering">Engineering</option>
-                                <option value="Management">Management</option>
-                                <option value="Humanities">Humanities</option>
-                                <option value="Social Sciences">Social Sciences</option>
-                            </select>
-                        </div>
-                    </div>
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center mb-6">
+                                <div className="md:col-span-1">
+                                    <Label>Keywords</Label>
+                                </div>
+                                <div className="md:col-span-3">
+                                    <input
+                                        type="text"
+                                        name="keywords"
+                                        value={formData.keywords}
+                                        onChange={handleChange}
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm placeholder-gray-400"
+                                        placeholder="Keywords of your paper"
+                                    />
+                                </div>
+                            </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center mb-6">
-                        <div className="md:col-span-1">
-                            <Label required>Country</Label>
-                        </div>
-                        <div className="md:col-span-3">
-                            <select
-                                name="paperCountry"
-                                value={formData.paperCountry}
-                                onChange={handleChange}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm bg-white"
-                            >
-                                <option value="">(Select Country)</option>
-                                <option value="India">India</option>
-                                <option value="USA">USA</option>
-                                <option value="UK">UK</option>
-                                <option value="Canada">Canada</option>
-                                <option value="Australia">Australia</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-
-
-                    {/* Author Details */}
-                    <SectionTitle title="Author Details" />
-
-                    <div className="mb-6 bg-gray-100 border-l-4 border-gray-600 p-4 text-sm text-gray-700 leading-relaxed">
-                        <span className="font-bold">NOTE:</span> 1<sup>st</sup> author's email and mobile number must be correct.
-                        Acceptance email and notifications will be sent to them.
-                        If your paper/article has more than five authors, email your paper to <a href="mailto:editor@ijnrd.org" className="text-blue-600 hover:underline">editor@ijnrd.org</a> with your paper title, author name(s), contact number, and email ID.
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div>
-                            <Label required>Author Category</Label>
-                            <select
-                                name="authorCategory"
-                                value={formData.authorCategory}
-                                onChange={handleChange}
-                                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm bg-white"
-                            >
-                                <option value="">(Please select author category)</option>
-                                <option value="Student">Student</option>
-                                <option value="Professional">Professional</option>
-                                <option value="Academician">Academician</option>
-                            </select>
-                        </div>
-                        <div>
-                            <Label required>No. of Authors</Label>
-                            <select
-                                name="numberOfAuthors"
-                                value={formData.numberOfAuthors}
-                                onChange={handleChange}
-                                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm bg-white"
-                            >
-                                <option value="">(Please select a number of authors)</option>
-                                {[1, 2, 3, 4, 5].map(num => (
-                                    <option key={num} value={num}>{num}</option>
-                                ))}
-                            </select>
-                        </div>
-                    </div>
-
-                    {/* Dynamic Authors Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
-                        {formData.authors.map((author, index) => {
-                            const startOrdinal = (n) => {
-                                const s = ["th", "st", "nd", "rd"];
-                                const v = n % 100;
-                                return n + (s[(v - 20) % 10] || s[v] || s[0]);
-                            }
-                            const ordinal = startOrdinal(index + 1);
-
-                            return (
-                                <div key={index} className="space-y-3">
-                                    <div className="flex items-center gap-2 mb-2">
-                                        <Icons.UserCircle />
-                                        <h4 className="font-medium text-lg">Author {index + 1}</h4>
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center mb-6">
+                                <div className="md:col-span-1">
+                                    <Label required>Upload Paper</Label>
+                                </div>
+                                <div className="md:col-span-3">
+                                    <div className="flex items-center">
+                                        <label className="cursor-pointer bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-l border border-gray-300 border-r-0">
+                                            Choose file
+                                            <input type="file" className="hidden" name="file" onChange={handleChange} accept=".doc,.docx" />
+                                        </label>
+                                        <div className="flex-1 py-2 px-3 border border-gray-300 rounded-r bg-white text-gray-500 text-sm truncate">
+                                            {formData.file ? formData.file.name : 'No file chosen'}
+                                        </div>
                                     </div>
-
-                                    <InputGroup
-                                        icon={Icons.User}
-                                        placeholder={`${ordinal} Author - Name`}
-                                        value={author.name}
-                                        onChange={(e) => handleAuthorChange(index, 'name', e.target.value)}
-                                    />
-                                    <InputGroup
-                                        icon={Icons.Briefcase}
-                                        placeholder={`${ordinal} Author - Designation`}
-                                        value={author.designation}
-                                        onChange={(e) => handleAuthorChange(index, 'designation', e.target.value)}
-                                    />
-                                    <InputGroup
-                                        icon={Icons.GraduationCap}
-                                        placeholder={`${ordinal} Author - University/Org`}
-                                        value={author.university}
-                                        onChange={(e) => handleAuthorChange(index, 'university', e.target.value)}
-                                    />
-                                    <InputGroup
-                                        icon={Icons.Phone}
-                                        placeholder={`${ordinal} Author - Contact Number`}
-                                        value={author.contact}
-                                        onChange={(e) => handleAuthorChange(index, 'contact', e.target.value)}
-                                        type="tel"
-                                    />
-                                    <InputGroup
-                                        icon={Icons.Mail}
-                                        placeholder={`${ordinal} Author - Email ID`}
-                                        value={author.email}
-                                        onChange={(e) => handleAuthorChange(index, 'email', e.target.value)}
-                                        type="email"
-                                    />
+                                    <p className="mt-1 text-xs text-gray-500">File type: <span className="font-bold text-gray-700">.doc</span> or <span className="font-bold text-gray-700">.docx</span> only.</p>
                                 </div>
-                            )
-                        })}
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center mb-6">
+                                <div className="md:col-span-1">
+                                    <Label required>Research Type</Label>
+                                </div>
+                                <div className="md:col-span-3">
+                                    <select
+                                        name="researchType"
+                                        value={formData.researchType}
+                                        onChange={handleChange}
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm bg-white"
+                                    >
+                                        <option>Research Paper</option>
+                                        <option>Review Paper</option>
+                                        <option>Case Study</option>
+                                        <option>Survey Paper</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center mb-6">
+                                <div className="md:col-span-1">
+                                    <Label required>Research Area</Label>
+                                </div>
+                                <div className="md:col-span-3">
+                                    <select
+                                        name="researchArea"
+                                        value={formData.researchArea}
+                                        onChange={handleChange}
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm bg-white"
+                                    >
+                                        <option value="">(Please Select Research area)</option>
+                                        <option value="Computer Science">Computer Science</option>
+                                        <option value="Engineering">Engineering</option>
+                                        <option value="Management">Management</option>
+                                        <option value="Humanities">Humanities</option>
+                                        <option value="Social Sciences">Social Sciences</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center mb-6">
+                                <div className="md:col-span-1">
+                                    <Label required>Country</Label>
+                                </div>
+                                <div className="md:col-span-3">
+                                    <select
+                                        name="paperCountry"
+                                        value={formData.paperCountry}
+                                        onChange={handleChange}
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm bg-white"
+                                    >
+                                        <option value="">(Select Country)</option>
+                                        <option value="India">India</option>
+                                        <option value="USA">USA</option>
+                                        <option value="UK">UK</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            {/* Author Details */}
+                            <SectionTitle title="Author Details" />
+
+                            <div className="mb-6 bg-gray-100 border-l-4 border-gray-600 p-4 text-sm text-gray-700 leading-relaxed">
+                                <span className="font-bold">NOTE:</span> 1<sup>st</sup> author's email and mobile number must be correct.
+                                Acceptance email and notifications will be sent to them.
+                                If your paper/article has more than five authors, email your paper to <a href="mailto:editor@ijnrd.org" className="text-blue-600 hover:underline">editor@ijnrd.org</a> with your paper title, author name(s), contact number, and email ID.
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <Label required>Author Category</Label>
+                                    <select
+                                        name="authorCategory"
+                                        value={formData.authorCategory}
+                                        onChange={handleChange}
+                                        className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm bg-white"
+                                    >
+                                        <option value="">(Please select author category)</option>
+                                        <option value="Student">Student</option>
+                                        <option value="Professional">Professional</option>
+                                        <option value="Academician">Academician</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <Label required>No. of Authors</Label>
+                                    <select
+                                        name="numberOfAuthors"
+                                        value={formData.numberOfAuthors}
+                                        onChange={handleChange}
+                                        className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm bg-white"
+                                    >
+                                        <option value="">(Please select a number of authors)</option>
+                                        {[1, 2, 3, 4, 5].map(num => (
+                                            <option key={num} value={num}>{num}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                            </div>
+
+                            {/* Dynamic Authors Grid */}
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+                                {formData.authors.map((author, index) => {
+                                    const startOrdinal = (n) => {
+                                        const s = ["th", "st", "nd", "rd"];
+                                        const v = n % 100;
+                                        return n + (s[(v - 20) % 10] || s[v] || s[0]);
+                                    }
+                                    const ordinal = startOrdinal(index + 1);
+
+                                    return (
+                                        <div key={index} className="space-y-3">
+                                            <div className="flex items-center gap-2 mb-2">
+                                                <Icons.UserCircle />
+                                                <h4 className="font-medium text-lg">Author {index + 1}</h4>
+                                            </div>
+
+                                            <InputGroup
+                                                icon={Icons.User}
+                                                placeholder={`${ordinal} Author - Name`}
+                                                value={author.name}
+                                                onChange={(e) => handleAuthorChange(index, 'name', e.target.value)}
+                                            />
+                                            <InputGroup
+                                                icon={Icons.Briefcase}
+                                                placeholder={`${ordinal} Author - Designation`}
+                                                value={author.designation}
+                                                onChange={(e) => handleAuthorChange(index, 'designation', e.target.value)}
+                                            />
+                                            <InputGroup
+                                                icon={Icons.GraduationCap}
+                                                placeholder={`${ordinal} Author - University/Org`}
+                                                value={author.university}
+                                                onChange={(e) => handleAuthorChange(index, 'university', e.target.value)}
+                                            />
+                                            <InputGroup
+                                                icon={Icons.Phone}
+                                                placeholder={`${ordinal} Author - Contact Number`}
+                                                value={author.contact}
+                                                onChange={(e) => handleAuthorChange(index, 'contact', e.target.value)}
+                                                type="tel"
+                                            />
+                                            <InputGroup
+                                                icon={Icons.Mail}
+                                                placeholder={`${ordinal} Author - Email ID`}
+                                                value={author.email}
+                                                onChange={(e) => handleAuthorChange(index, 'email', e.target.value)}
+                                                type="email"
+                                            />
+                                        </div>
+                                    )
+                                })}
+                            </div>
+
+                            {/* Address of Communication */}
+                            <SectionTitle title="Address of Communication" />
+
+                            <div className="space-y-6">
+                                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
+                                    <div className="md:col-span-1">
+                                        <Label required>Address Line 1</Label>
+                                    </div>
+                                    <div className="md:col-span-3">
+                                        <input
+                                            type="text"
+                                            name="addressLine1"
+                                            value={formData.addressLine1}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
+                                    <div className="md:col-span-1">
+                                        <Label>Address Line 2</Label>
+                                    </div>
+                                    <div className="md:col-span-3">
+                                        <input
+                                            type="text"
+                                            name="addressLine2"
+                                            value={formData.addressLine2}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
+                                    <div className="md:col-span-1">
+                                        <Label required>City/District</Label>
+                                    </div>
+                                    <div className="md:col-span-3">
+                                        <input
+                                            type="text"
+                                            name="city"
+                                            value={formData.city}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
+                                    <div className="md:col-span-1">
+                                        <Label required>State</Label>
+                                    </div>
+                                    <div className="md:col-span-3">
+                                        <input
+                                            type="text"
+                                            name="state"
+                                            value={formData.state}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
+                                    <div className="md:col-span-1">
+                                        <Label required>Country</Label>
+                                    </div>
+                                    <div className="md:col-span-3">
+                                        <select
+                                            name="addressCountry"
+                                            value={formData.addressCountry}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm bg-white"
+                                        >
+                                            <option value="">(Select Country)</option>
+                                            <option value="India">India</option>
+                                            <option value="USA">USA</option>
+                                            <option value="UK">UK</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
+                                    <div className="md:col-span-1">
+                                        <Label required>Postal Code</Label>
+                                    </div>
+                                    <div className="md:col-span-3">
+                                        <input
+                                            type="text"
+                                            name="postalCode"
+                                            value={formData.postalCode}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Terms & Submit */}
+                            <div className="mt-10 pt-6 border-t border-gray-200">
+                                <div className="flex items-center justify-center mb-8">
+                                    <input
+                                        id="agreed"
+                                        name="agreed"
+                                        type="checkbox"
+                                        required
+                                        className="h-4 w-4 text-accent-indigo focus:ring-accent-indigo border-gray-300 rounded"
+                                        onChange={handleChange}
+                                        checked={formData.agreed}
+                                    />
+                                    <label htmlFor="agreed" className="ml-2 block text-sm text-gray-900">
+                                        Agree with <a href="#" className="text-red-500 hover:text-red-700">Terms and Conditions *</a>
+                                    </label>
+                                </div>
+
+                                <div className="flex justify-center">
+                                    <button
+                                        type="submit"
+                                        className="inline-flex justify-center py-3 px-12 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200 uppercase tracking-wider"
+                                    >
+                                        Submit Paper
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
 
-                    {/* Address of Communication */}
-                    <SectionTitle title="Address of Communication" />
+                    {/* Right Column: Sidebar */}
+                    <div className="lg:col-span-1">
+                        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
+                            <h3 className="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-100">Important Links</h3>
+                            <ul className="space-y-4">
+                                {sidebarLinks.map((item, idx) => (
+                                    <li key={idx}>
+                                        <a href="#" className="flex items-center gap-3 text-red-500 hover:text-red-600 transition-colors group">
+                                            <span className="text-lg opacity-80 group-hover:opacity-100"><item.icon /></span>
+                                            <span className="font-medium text-sm md:text-[15px]">{item.text}</span>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
 
-                    <div className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
-                            <div className="md:col-span-1">
-                                <Label required>Address Line 1</Label>
+                            <div className="mt-8 pt-6 border-t border-gray-100 grid grid-cols-2 gap-4">
+                                {/* Placeholders for logos matching screenshot */}
+                                <div className="h-10 border border-gray-300 rounded flex items-center justify-center text-xs font-bold text-gray-700">
+                                    ISSN
+                                    <span className="text-[9px] ml-1 font-normal block text-center">INTERNATIONAL<br />STANDARD<br />SERIAL NUMBER</span>
+                                </div>
+                                <div className="h-10 border border-gray-300 rounded flex items-center justify-center text-sm font-bold text-blue-700">
+                                    scholar9
+                                </div>
+                                <div className="h-12 bg-orange-500 rounded flex items-center justify-center text-xs font-bold text-white">
+                                    OPEN <span className="mx-1 text-lg">🔓</span> ACCESS
+                                </div>
+                                <div className="h-12 bg-white border border-gray-300 rounded flex items-center justify-center p-1">
+                                    <span className="text-[10px] text-center font-semibold leading-tight">PEER<br />REVIEW<br />PROCESS</span>
+                                </div>
                             </div>
-                            <div className="md:col-span-3">
-                                <input
-                                    type="text"
-                                    name="addressLine1"
-                                    value={formData.addressLine1}
-                                    onChange={handleChange}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm"
-                                />
-                            </div>
-                        </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
-                            <div className="md:col-span-1">
-                                <Label>Address Line 2</Label>
-                            </div>
-                            <div className="md:col-span-3">
-                                <input
-                                    type="text"
-                                    name="addressLine2"
-                                    value={formData.addressLine2}
-                                    onChange={handleChange}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm"
-                                />
-                            </div>
-                        </div>
+                            {/* Divider separate sections */}
+                            <div className="my-8 h-px bg-gray-200"></div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
-                            <div className="md:col-span-1">
-                                <Label required>City/District</Label>
-                            </div>
-                            <div className="md:col-span-3">
-                                <input
-                                    type="text"
-                                    name="city"
-                                    value={formData.city}
-                                    onChange={handleChange}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm"
-                                />
-                            </div>
-                        </div>
+                            {/* About Journal Section */}
+                            <h3 className="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-100">About Journal</h3>
 
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
-                            <div className="md:col-span-1">
-                                <Label required>State</Label>
+                            <div className="flex flex-wrap gap-2 mb-6">
+                                {[
+                                    "Impact Factor : 8.76", "ISSN : 2456-4184", "ESTD : 2016",
+                                    "Transparent Peer Review", "Referred", "Open Access", "Monthly",
+                                    "Multidisciplinary", "Multilanguage", "Online, Print Journal",
+                                    "ISSN Approved", "Crossref DOI", "Low Cost Journal",
+                                    "Hardcopy of Journal & Certificate", "UGC CARE Approved", "Low Cost Publication"
+                                ].map((tag, i) => (
+                                    <span key={i} className="px-3 py-1.5 border border-gray-300 text-gray-500 text-xs font-medium rounded hover:border-indigo-500 hover:text-indigo-600 transition-colors cursor-default">
+                                        {tag}
+                                    </span>
+                                ))}
                             </div>
-                            <div className="md:col-span-3">
-                                <input
-                                    type="text"
-                                    name="state"
-                                    value={formData.state}
-                                    onChange={handleChange}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm"
-                                />
-                            </div>
-                        </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
-                            <div className="md:col-span-1">
-                                <Label required>Country</Label>
-                            </div>
-                            <div className="md:col-span-3">
-                                <select
-                                    name="addressCountry"
-                                    value={formData.addressCountry}
-                                    onChange={handleChange}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm bg-white"
-                                >
-                                    <option value="">(Select Country)</option>
-                                    <option value="India">India</option>
-                                    <option value="USA">USA</option>
-                                    <option value="UK">UK</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
-                            <div className="md:col-span-1">
-                                <Label required>Postal Code</Label>
-                            </div>
-                            <div className="md:col-span-3">
-                                <input
-                                    type="text"
-                                    name="postalCode"
-                                    value={formData.postalCode}
-                                    onChange={handleChange}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-accent-indigo focus:border-accent-indigo sm:text-sm"
-                                />
-                            </div>
+                            <p className="text-xs text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                                <span className="font-bold text-gray-800">Copyright & License:</span> © 2026 - Authors hold the copyright of this article. This work is licensed under a Creative Commons Attribution 4.0 International License.
+                            </p>
                         </div>
                     </div>
 
-                    {/* Terms & Submit */}
-                    <div className="mt-10 pt-6 border-t border-gray-200">
-                        <div className="flex items-center justify-center mb-8">
-                            <input
-                                id="agreed"
-                                name="agreed"
-                                type="checkbox"
-                                required
-                                className="h-4 w-4 text-accent-indigo focus:ring-accent-indigo border-gray-300 rounded"
-                                onChange={handleChange}
-                                checked={formData.agreed}
-                            />
-                            <label htmlFor="agreed" className="ml-2 block text-sm text-gray-900">
-                                Agree with <a href="#" className="text-red-500 hover:text-red-700">Terms and Conditions *</a>
-                            </label>
-                        </div>
-
-                        <div className="flex justify-center">
-                            <button
-                                type="submit"
-                                className="inline-flex justify-center py-3 px-12 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200 uppercase tracking-wider"
-                            >
-                                Submit Paper
-                            </button>
-                        </div>
-                    </div>
-
-                </form>
+                </div>
             </div>
         </div>
     )
