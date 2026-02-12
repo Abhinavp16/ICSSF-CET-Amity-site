@@ -1,4 +1,5 @@
 import SectionHeader from './SectionHeader'
+import { Link } from 'react-router-dom'
 
 const Pricing = () => {
     const plans = [
@@ -66,12 +67,14 @@ const Pricing = () => {
                                 ))}
                             </ul>
 
-                            <button className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${plan.highlight
-                                ? 'bg-white text-indigo-600 border border-indigo-100 hover:bg-indigo-50 shadow-lg'
-                                : 'bg-light-bg text-text-primary border border-light-border hover:bg-accent-indigo hover:text-white hover:border-transparent'
-                                }`}>
+                            <Link
+                                to="/submit-paper"
+                                className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 inline-block text-center ${plan.highlight
+                                    ? 'bg-white text-indigo-600 border border-indigo-100 hover:bg-indigo-50 shadow-lg'
+                                    : 'bg-light-bg text-text-primary border border-light-border hover:bg-accent-indigo hover:text-white hover:border-transparent'
+                                    }`}>
                                 Register Now
-                            </button>
+                            </Link>
                         </div>
                     ))}
                 </div>

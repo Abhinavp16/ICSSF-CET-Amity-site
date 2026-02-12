@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import StatCounter from './StatCounter'
 
 const Hero = () => {
@@ -59,21 +60,21 @@ const Hero = () => {
 
                 {/* Actions */}
                 <div className="hero-fade-in flex items-center justify-center gap-4 flex-wrap" style={{ animationDelay: '0.7s' }}>
-                    <a
-                        href="#submit"
+                    <Link
+                        to="/submit-paper"
                         className="inline-flex items-center gap-2 px-7 py-3.5 btn-gradient border border-white/20 text-white font-semibold text-[0.95rem] rounded-lg transition-all duration-300"
                     >
                         <span>Submit Paper</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
-                    </a>
-                    <a
-                        href="#call-for-papers"
+                    </Link>
+                    <Link
+                        to="/#call-for-papers"
                         className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-text-primary font-semibold text-[0.95rem] rounded-lg border border-light-border hover:border-light-border-hover hover:bg-light-card-hover hover:-translate-y-0.5 transition-all duration-300 shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
                     >
                         <span>Call for Papers</span>
-                    </a>
+                    </Link>
                 </div>
             </div>
 

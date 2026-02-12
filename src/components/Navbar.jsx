@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false)
@@ -14,12 +15,12 @@ const Navbar = () => {
     }, [])
 
     const navItems = [
-        { label: 'Home', href: '#home' },
-        { label: 'About', href: '#about' },
-        { label: 'Call for Papers', href: '#call-for-papers' },
-        { label: 'Procedure', href: '#procedure' },
-        { label: 'Charges', href: '#registration' },
-        { label: 'Contact', href: '#submit-cta' },
+        { label: 'Home', to: '/#home' },
+        { label: 'About', to: '/#about' },
+        { label: 'Call for Papers', to: '/#call-for-papers' },
+        { label: 'Procedure', to: '/#procedure' },
+        { label: 'Charges', to: '/#registration' },
+        { label: 'Contact', to: '/#submit-cta' },
     ]
 
     const handleLinkClick = () => {
@@ -35,32 +36,32 @@ const Navbar = () => {
         >
             <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between border-x border-light-border h-full">
                 {/* Logo */}
-                <a href="#" className="flex items-center gap-2.5 font-display font-bold text-xl tracking-tight">
+                <Link to="/" className="flex items-center gap-2.5 font-display font-bold text-xl tracking-tight">
                     <span className="text-2xl">📚</span>
                     <span className="gradient-text">ICSSF-CET</span>
-                </a>
+                </Link>
 
                 {/* Desktop Nav Links */}
                 <ul className="hidden md:flex list-none gap-4">
                     {navItems.map((item) => (
                         <li key={item.label}>
-                            <a
-                                href={item.href}
+                            <Link
+                                to={item.to}
                                 className="px-4 py-2 border border-gray-200 text-sm font-medium text-text-secondary transition-all duration-300 hover:border-accent-indigo hover:text-accent-indigo hover:bg-indigo-50/30"
                             >
                                 {item.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
 
                 {/* Desktop CTA */}
-                <a
-                    href="#submit"
+                <Link
+                    to="/submit-paper"
                     className="hidden md:inline-flex px-6 py-2.5 btn-gradient border border-white/20 text-white font-semibold text-sm rounded-lg transition-all duration-300 hover:-translate-y-0.5"
                 >
                     Submit Paper
-                </a>
+                </Link>
 
                 {/* Mobile Toggle */}
                 <button
@@ -90,22 +91,22 @@ const Navbar = () => {
             >
                 <div className="p-6 flex flex-col gap-4">
                     {navItems.map((item) => (
-                        <a
+                        <Link
                             key={item.label}
-                            href={item.href}
+                            to={item.to}
                             onClick={handleLinkClick}
                             className="text-text-secondary text-sm font-medium hover:text-text-primary transition-colors"
                         >
                             {item.label}
-                        </a>
+                        </Link>
                     ))}
-                    <a
-                        href="#submit"
+                    <Link
+                        to="/submit-paper"
                         onClick={handleLinkClick}
                         className="mt-2 px-6 py-3 btn-gradient text-white font-semibold text-sm rounded-lg text-center transition-all duration-300"
                     >
                         Submit Paper
-                    </a>
+                    </Link>
                 </div>
             </div>
         </nav>

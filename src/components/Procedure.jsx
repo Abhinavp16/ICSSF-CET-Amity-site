@@ -1,4 +1,5 @@
 import SectionHeader from './SectionHeader'
+import { Link } from 'react-router-dom'
 
 const steps = [
     {
@@ -7,8 +8,8 @@ const steps = [
         title: 'Submit Paper Online',
         desc: 'Download the IJNRD paper format and submit your manuscript through the Submit Paper portal for seamless journal publication.',
         links: [
-            { label: 'Sample Paper Format ↓', href: '#' },
-            { label: 'Submit Paper →', href: '#submit' },
+            { label: 'Sample Paper Format ↓', to: '#' },
+            { label: 'Submit Paper →', to: '/submit-paper' },
         ],
     },
     {
@@ -16,7 +17,7 @@ const steps = [
         icon: '🔍',
         title: 'Peer Review Process',
         desc: 'Your paper undergoes a transparent peer review process. Authors are notified of acceptance or rejection via email and SMS.',
-        links: [{ label: 'Check Paper Status →', href: '#' }],
+        links: [{ label: 'Check Paper Status →', to: '#' }],
     },
     {
         number: '03',
@@ -24,8 +25,8 @@ const steps = [
         title: 'Pay Fees Online',
         desc: 'Pay the low-cost publication fee, then download and complete the Undertaking Form available in your Author Track section.',
         links: [
-            { label: 'View Charges →', href: '#pricing' },
-            { label: 'Pay Fees Online →', href: '#' },
+            { label: 'View Charges →', to: '/#registration' },
+            { label: 'Pay Fees Online →', to: '#' },
         ],
     },
     {
@@ -33,9 +34,11 @@ const steps = [
         icon: '🎉',
         title: 'Paper Published',
         desc: 'After submitting documents, your paper is published promptly. Download the publication certificate and confirmation letter from your account.',
-        links: [{ label: 'Download Certificate →', href: '#' }],
+        links: [{ label: 'Download Certificate →', to: '#' }],
     },
 ]
+
+
 
 const StepCard = ({ step }) => {
     return (
@@ -48,13 +51,13 @@ const StepCard = ({ step }) => {
             <p className="text-sm text-text-secondary leading-relaxed mb-5">{step.desc}</p>
             <div className="flex flex-col gap-2">
                 {step.links.map((link) => (
-                    <a
+                    <Link
                         key={link.label}
-                        href={link.href}
+                        to={link.to}
                         className="text-xs text-accent-indigo font-medium hover:text-accent-lavender transition-colors duration-200 inline-block hover:translate-x-1"
                     >
                         {link.label}
-                    </a>
+                    </Link>
                 ))}
             </div>
         </div>

@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom'
+
 const SubmitCTA = () => {
     return (
-        <section className="py-20 bg-white" id="submit">
+        <section className="py-20 bg-white" id="submit-cta">
             <div className="max-w-[1200px] mx-auto px-6">
                 <div className="animate-on-scroll text-center py-16 lg:py-20 px-8 lg:px-12 bg-gradient-to-br from-accent-indigo/5 via-accent-purple/5 to-accent-indigo/5 border border-light-border rounded-3xl relative overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
                     {/* Radial glow */}
@@ -14,11 +16,9 @@ const SubmitCTA = () => {
                     </p>
 
                     <div className="relative flex items-center justify-center gap-4 flex-wrap">
-                        <a
-                            href="https://www.ijnrd.org/submitpaper.php"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-9 py-4 btn-gradient text-white font-semibold rounded-lg transition-all duration-300"
+                        <Link
+                            to="/submit-paper"
+                            className="inline-flex items-center gap-2 px-9 py-4 btn-gradient text-white font-semibold rounded-lg transition-all duration-300 transform hover:-translate-y-0.5"
                         >
                             <span>Submit Paper Online</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -26,7 +26,7 @@ const SubmitCTA = () => {
                                 <polyline points="15 3 21 3 21 9" />
                                 <line x1="10" y1="14" x2="21" y2="3" />
                             </svg>
-                        </a>
+                        </Link>
                         <a
                             href="https://www.ijnrd.org/track.php"
                             target="_blank"

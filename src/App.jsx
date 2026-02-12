@@ -1,33 +1,41 @@
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import TopBar from './components/TopBar'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import QuickLinks from './components/QuickLinks'
-import About from './components/About'
-import CallForPapers from './components/CallForPapers'
-import Procedure from './components/Procedure'
-import Pricing from './components/Pricing'
-import Organizers from './components/Organizers'
-import SubmitCTA from './components/SubmitCTA'
 import Footer from './components/Footer'
-import useScrollReveal from './hooks/useScrollReveal'
+import Home from './pages/Home'
+import SubmitPaper from './pages/SubmitPaper'
+import ScrollToHashElement from './components/ScrollToHashElement'
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    // Disable browser default scroll restoration
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
 
 function App() {
-  useScrollReveal()
-
   return (
-    <div className="min-h-screen">
-      <TopBar />
-      <Navbar />
-      <Hero />
-      <QuickLinks />
-      <About />
-      <CallForPapers />
-      <Pricing />
-      <Organizers />
-      <Procedure />
-      <SubmitCTA />
-      <Footer />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <ScrollToHashElement />
+      <div className="min-h-screen bg-white">
+        <TopBar />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/submit-paper" element={<SubmitPaper />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 
