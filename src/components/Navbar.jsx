@@ -41,15 +41,14 @@ const Navbar = () => {
                 </a>
 
                 {/* Desktop Nav Links */}
-                <ul className="hidden md:flex list-none gap-8">
+                <ul className="hidden md:flex list-none gap-4">
                     {navItems.map((item) => (
                         <li key={item.label}>
                             <a
                                 href={item.href}
-                                className="text-text-secondary text-sm font-medium relative py-1 hover:text-text-primary transition-colors duration-300 group"
+                                className="px-4 py-2 border border-gray-200 text-sm font-medium text-text-secondary transition-all duration-300 hover:border-accent-indigo hover:text-accent-indigo hover:bg-indigo-50/30"
                             >
                                 {item.label}
-                                <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-gradient-to-r from-accent-indigo to-accent-purple rounded-sm transition-all duration-400 group-hover:w-full" />
                             </a>
                         </li>
                     ))}
@@ -58,7 +57,7 @@ const Navbar = () => {
                 {/* Desktop CTA */}
                 <a
                     href="#submit"
-                    className="hidden md:inline-flex px-6 py-2.5 btn-gradient text-white font-semibold text-sm rounded-lg transition-all duration-300 hover:-translate-y-0.5"
+                    className="hidden md:inline-flex px-6 py-2.5 btn-gradient border border-white/20 text-white font-semibold text-sm rounded-lg transition-all duration-300 hover:-translate-y-0.5"
                 >
                     Submit Paper
                 </a>

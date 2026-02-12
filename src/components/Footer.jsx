@@ -37,8 +37,8 @@ const Footer = () => {
                             International Conference on Sustainable Solutions for the Future: Connecting Environment & Technology — Organized by Amity University.
                         </p>
                         <div className="flex flex-col gap-2">
-                            <a href="tel:+919429458311" className="text-[#a0a0b8] text-sm hover:text-white transition-colors">
-                                📞 +91 9429458311
+                            <a href="#" className="text-[#a0a0b8] text-sm hover:text-white transition-colors">
+                                📞 +91 94294*****
                             </a>
                             <a href="mailto:info@amity.edu" className="text-[#a0a0b8] text-sm hover:text-white transition-colors">
                                 ✉️ info@amity.edu

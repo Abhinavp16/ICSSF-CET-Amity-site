@@ -69,19 +69,19 @@ const TopBar = () => {
                         </div>
                         <div className="flex items-center gap-3 text-gray-700 font-semibold text-xs">
                             <span className="w-6 h-6 rounded bg-indigo-50 text-indigo-600 flex items-center justify-center text-sm">⏰</span>
-                            <span>{currentTime.toLocaleTimeString()}</span>
+                            <span>{currentTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })}</span>
                         </div>
-                        <a href="mailto:editor@ijnrd.org" className="flex items-center gap-3 text-gray-700 hover:text-[#1e40af] transition-colors font-semibold text-xs group">
+                        <a href="mailto:info@icssfcet.com" className="flex items-center gap-3 text-gray-700 hover:text-[#1e40af] transition-colors font-semibold text-xs group">
                             <span className="w-6 h-6 rounded bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors flex items-center justify-center text-sm">✉️</span>
-                            <span>editor@ijnrd.org</span>
+                            <span>info@icssfcet.com</span>
                         </a>
-                        <a href="tel:+919429458311" className="flex items-center gap-3 text-gray-700 hover:text-[#1e40af] transition-colors font-semibold text-xs group">
+                        <a href="#" className="flex items-center gap-3 text-gray-700 hover:text-[#1e40af] transition-colors font-semibold text-xs group">
                             <span className="w-6 h-6 rounded bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors flex items-center justify-center text-sm">📞</span>
-                            <span>+91 9429458311</span>
+                            <span>+91 94294*****</span>
                         </a>
                         <div className="flex items-center gap-2 text-[#1e40af] font-bold text-xs mt-1 bg-indigo-50 px-3 py-1.5 rounded-full">
                             <span>📖</span>
-                            <span>Publishes on 1st of every Month</span>
+                            <span>Conference open twice in year June and December</span>
                         </div>
                     </div>
                 </div>

@@ -61,7 +61,7 @@ const Hero = () => {
                 <div className="hero-fade-in flex items-center justify-center gap-4 flex-wrap" style={{ animationDelay: '0.7s' }}>
                     <a
                         href="#submit"
-                        className="inline-flex items-center gap-2 px-7 py-3.5 btn-gradient text-white font-semibold text-[0.95rem] rounded-lg transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-7 py-3.5 btn-gradient border border-white/20 text-white font-semibold text-[0.95rem] rounded-lg transition-all duration-300"
                     >
                         <span>Submit Paper</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
