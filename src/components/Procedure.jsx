@@ -1,4 +1,4 @@
-import SectionHeader from './SectionHeader'
+   import SectionHeader from './SectionHeader'
 import { Link } from 'react-router-dom'
 
 const steps = [
